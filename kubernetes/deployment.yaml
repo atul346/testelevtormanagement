@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elevator-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elevator-management
+  template:
+    metadata:
+      labels:
+        app: elevator-management
+    spec:
+      containers:
+      - name: elevator-management
+        image: <DOCKER-IMAGE-REPO>/elevator-management-go:
